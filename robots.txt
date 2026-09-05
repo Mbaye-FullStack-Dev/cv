@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mbaye-ndiaye.vercel.app/sitemap.xml

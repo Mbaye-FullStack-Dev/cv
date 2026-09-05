@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mbaye Ndiaye — Développeur Full-Stack</title>
+<meta name="description" content="Mbaye Ndiaye, développeur full-stack basé à Saint-Louis, Sénégal. Frontend, backend, mobile et réseaux.">
+
+<!-- IMPORTANT : remplace cette URL par ton vrai domaine Vercel une fois le site en ligne (ex: https://mbaye-ndiaye.vercel.app/) -->
+<link rel="canonical" href="https://mbaye-ndiaye.vercel.app/">
+
+<!-- Partage sur réseaux sociaux (Facebook, LinkedIn, WhatsApp...) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mbaye Ndiaye — Développeur Full-Stack">
+<meta property="og:description" content="Développeur full-stack basé à Saint-Louis, Sénégal. Web, mobile, réseaux.">
+<meta property="og:url" content="https://mbaye-ndiaye.vercel.app/">
+<meta property="og:image" content="https://mbaye-ndiaye.vercel.app/mbaye.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mbaye Ndiaye — Développeur Full-Stack">
+<meta name="twitter:description" content="Développeur full-stack basé à Saint-Louis, Sénégal. Web, mobile, réseaux.">
+<meta name="twitter:image" content="https://mbaye-ndiaye.vercel.app/mbaye.jpg">
+
+<!-- Aide Google à comprendre qui tu es (rich results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mbaye Ndiaye",
+  "jobTitle": "Développeur Full-Stack",
+  "url": "https://mbaye-ndiaye.vercel.app/",
+  "image": "https://mbaye-ndiaye.vercel.app/mbaye.jpg",
+  "email": "mailto:mbayendiaye2202@gmail.com",
+  "telephone": "+221777522114",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Saint-Louis",
+    "addressCountry": "SN"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/mbaye-ndiaye-0a491b269",
+    "https://sites.google.com/view/mbayefullstack-dev/accueil"
+  ],
+  "knowsLanguage": ["fr", "en", "wo"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #10141b;
+    --bg-raised: #171d27;
+    --bg-raised-2: #1d2530;
+    --line: #2a3341;
+    --text: #eef1f5;
+    --text-dim: #9aa5b3;
+    --text-faint: #667284;
+    --amber: #e8b84f;
+    --amber-dim: #a5813a;
+    --slate: #7c93b3;
+    --radius: 3px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.disp{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  .mono{
+    font-family:'JetBrains Mono', monospace;
+  }
+  a{color:inherit;}
+  ::selection{background:var(--amber); color:#10141b;}
+  :focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+
+  .wrap{max-width:920px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(16,20,27,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:920px; margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-mark{font-family:'JetBrains Mono',monospace; font-size:14px; color:var(--amber);}
+  .nav-links{display:flex; gap:24px; list-style:none; margin:0; padding:0; font-size:14px;}
+  .nav-links a{text-decoration:none; color:var(--text-dim); transition:color .15s;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-toggle{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:88px 0 72px;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.35fr 0.9fr;
+    gap:56px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+  }
+  .kicker{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    color:var(--amber);
+    margin-bottom:18px;
+    display:block;
+  }
+  .kicker::before{content:"~/"; color:var(--text-faint);}
+  h1.name{
+    font-size:clamp(2.4rem, 5vw, 3.4rem);
+    line-height:1.05;
+    color:var(--text);
+  }
+  .role{
+    margin-top:14px;
+    font-size:1.15rem;
+    color:var(--slate);
+    font-weight:500;
+  }
+  .pitch{
+    margin-top:22px;
+    max-width:52ch;
+    color:var(--text-dim);
+    font-size:1rem;
+  }
+  .hero-actions{
+    margin-top:32px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 20px;
+    border-radius:var(--radius);
+    font-size:14px;
+    font-weight:500;
+    text-decoration:none;
+    border:1px solid var(--line);
+    transition:border-color .15s, background .15s;
+  }
+  .btn-primary{
+    background:var(--amber);
+    color:#171106;
+    border-color:var(--amber);
+  }
+  .btn-primary:hover{background:#f2c667;}
+  .btn-ghost{
+    color:var(--text);
+    background:transparent;
+  }
+  .btn-ghost:hover{border-color:var(--slate);}
+
+  .portrait-frame{
+    position:relative;
+    justify-self:center;
+    width:100%;
+    max-width:280px;
+  }
+  .portrait-frame svg.node-deco{
+    position:absolute;
+    inset:-30px;
+    z-index:-1;
+    opacity:0.55;
+  }
+  .portrait-frame img{
+    width:100%;
+    display:block;
+    border-radius:6px;
+    filter:grayscale(15%) contrast(1.02);
+    border:1px solid var(--line);
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{
+    padding:64px 0;
+    border-bottom:1px solid var(--line);
+  }
+  section:last-of-type{border-bottom:none;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:36px;
+  }
+  .section-num{
+    font-family:'JetBrains Mono', monospace;
+    color:var(--text-faint);
+    font-size:14px;
+  }
+  h2.section-title{
+    font-size:1.5rem;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-body{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+  .about-body p{color:var(--text-dim); margin:0 0 14px;}
+  .facts{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13.5px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    color:var(--text-dim);
+    align-self:start;
+    border-left:2px solid var(--line);
+    padding-left:18px;
+  }
+  .facts .k{color:var(--text-faint);}
+  .facts .v{color:var(--text);}
+  .facts a{text-decoration:none; border-bottom:1px dotted var(--text-faint);}
+  .facts a:hover{color:var(--amber); border-color:var(--amber);}
+
+  /* ---------- STACK ---------- */
+  .stack{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .layer{
+    display:grid;
+    grid-template-columns:190px 1fr;
+    gap:24px;
+    padding:20px 0;
+    border-top:1px solid var(--line);
+    align-items:start;
+  }
+  .stack .layer:last-child{border-bottom:1px solid var(--line);}
+  .layer-label{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+  .layer-label .idx{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--amber-dim);}
+  .layer-label .name{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1rem;}
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .tag{
+    font-size:13px;
+    color:var(--text-dim);
+    padding:5px 11px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:var(--bg-raised);
+  }
+
+  /* ---------- TIMELINE (experience & education) ---------- */
+  .timeline{
+    position:relative;
+    padding-left:26px;
+    border-left:1px solid var(--line);
+  }
+  .tl-item{
+    position:relative;
+    padding-bottom:38px;
+  }
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-31px;
+    top:6px;
+    width:9px; height:9px;
+    border-radius:50%;
+    background:var(--bg);
+    border:2px solid var(--amber);
+  }
+  .tl-meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    color:var(--amber-dim);
+    margin-bottom:6px;
+  }
+  .tl-title{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:1.05rem;
+    margin-bottom:3px;
+  }
+  .tl-org{
+    color:var(--slate);
+    font-size:14px;
+    margin-bottom:10px;
+  }
+  .tl-item ul{
+    margin:0; padding-left:18px;
+    color:var(--text-dim);
+    font-size:14.5px;
+    display:flex; flex-direction:column; gap:5px;
+  }
+  .tl-item ul li::marker{color:var(--text-faint);}
+
+  /* ---------- PROJECTS ---------- */
+  .projects{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .project{
+    background:var(--bg);
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .project .p-tag{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--amber-dim);}
+  .project h3{font-size:1rem;}
+  .project p{color:var(--text-dim); font-size:13.5px; margin:0;}
+  .project a.p-link{
+    margin-top:auto;
+    font-size:13px;
+    text-decoration:none;
+    color:var(--slate);
+    border-bottom:1px dotted var(--slate);
+    align-self:flex-start;
+  }
+  .project a.p-link:hover{color:var(--amber); border-color:var(--amber);}
+
+  /* ---------- CERTS / LANGUAGES / INTERESTS ---------- */
+  .split3{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:40px;
+  }
+  .split3 h3{
+    font-size:0.95rem;
+    color:var(--text-dim);
+    font-weight:600;
+    margin-bottom:16px;
+    font-family:'JetBrains Mono',monospace;
+    text-transform:none;
+  }
+  .lang-row{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; font-size:14px;}
+  .lang-bar{flex:1; height:3px; background:var(--line); margin-left:14px; position:relative; border-radius:2px; overflow:hidden;}
+  .lang-bar > span{position:absolute; left:0; top:0; bottom:0; background:var(--amber);}
+  .cert-list, .interest-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; font-size:14px; color:var(--text-dim);}
+  .cert-list li{padding-left:16px; position:relative;}
+  .cert-list li::before{content:"—"; position:absolute; left:0; color:var(--text-faint);}
+  .interest-list{flex-direction:row; flex-wrap:wrap; gap:8px;}
+  .interest-list li{
+    padding:5px 11px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:var(--bg-raised);
+    font-size:13px;
+  }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{
+    padding:60px 0 48px;
+  }
+  .contact-panel{
+    background:var(--bg-raised);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:44px;
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:40px;
+    align-items:center;
+  }
+  .contact-panel h2{font-size:1.6rem; margin-bottom:12px;}
+  .contact-panel p{color:var(--text-dim); margin:0; max-width:42ch;}
+  .contact-list{
+    font-family:'JetBrains Mono', monospace;
+    font-size:14px;
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .contact-list a{text-decoration:none; color:var(--text);}
+  .contact-list .k{color:var(--text-faint); margin-right:8px;}
+  .contact-list a:hover{color:var(--amber);}
+  .foot-note{
+    text-align:center;
+    margin-top:36px;
+    font-size:12.5px;
+    color:var(--text-faint);
+    font-family:'JetBrains Mono', monospace;
+  }
+
+  @media (max-width: 760px){
+    .hero-grid{grid-template-columns:1fr; gap:36px;}
+    .portrait-frame{order:-1; max-width:180px;}
+    .about-body{grid-template-columns:1fr;}
+    .layer{grid-template-columns:1fr; gap:10px;}
+    .projects{grid-template-columns:1fr;}
+    .split3{grid-template-columns:1fr; gap:32px;}
+    .contact-panel{grid-template-columns:1fr; padding:30px;}
+    .nav-links{gap:16px; font-size:13px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <span class="nav-mark">mbaye@fullstack:~$</span>
+    <ul class="nav-links">
+      <li><a href="#about">Profil</a></li>
+      <li><a href="#stack">Compétences</a></li>
+      <li><a href="#experience">Expérience</a></li>
+      <li><a href="#formation">Formation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="kicker">saint-louis, sénégal</span>
+        <h1 class="name">Mbaye Ndiaye</h1>
+        <p class="role">Développeur Full-Stack — Web &amp; Mobile</p>
+        <p class="pitch">Je conçois et je construis des applications web et mobiles de bout en bout : de l'API jusqu'à l'interface, avec une base solide en réseaux et systèmes. Diplômé d'un Master en Conception et Développement d'Applications Web, curieux de cybersécurité et toujours en train d'apprendre.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:mbayendiaye2202@gmail.com">Me contacter</a>
+          <a class="btn btn-ghost" href="https://sites.google.com/view/mbayefullstack-dev/accueil" target="_blank" rel="noopener">Voir le portfolio</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/mbaye-ndiaye-0a491b269" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="portrait-frame">
+        <svg class="node-deco" viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="#e8b84f" stroke-width="1">
+            <line x1="10" y1="30" x2="60" y2="70" opacity="0.5"/>
+            <line x1="290" y1="50" x2="240" y2="90" opacity="0.5"/>
+            <line x1="15" y1="300" x2="65" y2="260" opacity="0.5"/>
+            <line x1="285" y1="310" x2="235" y2="270" opacity="0.5"/>
+          </g>
+          <g fill="#e8b84f">
+            <circle cx="10" cy="30" r="3.5"/>
+            <circle cx="290" cy="50" r="3.5"/>
+            <circle cx="15" cy="300" r="3.5"/>
+            <circle cx="285" cy="310" r="3.5"/>
+          </g>
+        </svg>
+        <img src="mbaye.jpg" alt="Portrait de Mbaye Ndiaye">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="wrap">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Profil</h2>
+    </div>
+    <div class="about-body">
+      <div>
+        <p>Développeur full-stack diplômé de l'Université Numérique Cheikh Hamidou Kane (UN-CHK), passionné par les nouvelles technologies et l'innovation. Intéressé par la cybersécurité, les réseaux, l'intelligence artificielle et le développement web &amp; mobile.</p>
+        <p>Autonome et rigoureux, toujours en quête de nouveaux défis techniques. Mon objectif est de contribuer au progrès technologique en créant des solutions informatiques innovantes et efficaces.</p>
+      </div>
+      <div class="facts">
+        <div><span class="k">Localisation</span><br><span class="v">Saint-Louis, Sénégal</span></div>
+        <div><span class="k">Téléphone</span><br><span class="v">+221 77 752 21 14</span></div>
+        <div><span class="k">Email</span><br><a href="mailto:mbayendiaye2202@gmail.com" class="v">mbayendiaye2202@gmail.com</a></div>
+        <div><span class="k">Permis</span><br><span class="v">A1, B</span></div>
+        <div><span class="k">Langues</span><br><span class="v">Français, Anglais, Wolof</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack" class="wrap">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Compétences techniques</h2>
+    </div>
+    <div class="stack">
+      <div class="layer">
+        <div class="layer-label"><span class="idx">frontend</span><span class="name">Interfaces</span></div>
+        <div class="tags">
+          <span class="tag">React</span><span class="tag">Angular</span><span class="tag">JavaScript / TypeScript</span>
+          <span class="tag">HTML5 / CSS3</span><span class="tag">Bootstrap</span>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="layer-label"><span class="idx">backend</span><span class="name">Serveur &amp; API</span></div>
+        <div class="tags">
+          <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">PHP</span>
+          <span class="tag">Laravel</span><span class="tag">JSF</span><span class="tag">C</span>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="layer-label"><span class="idx">data</span><span class="name">Bases de données</span></div>
+        <div class="tags">
+          <span class="tag">SQL</span><span class="tag">Modélisation &amp; optimisation</span><span class="tag">Firebase</span><span class="tag">SQLite</span>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="layer-label"><span class="idx">mobile</span><span class="name">Applications mobiles</span></div>
+        <div class="tags">
+          <span class="tag">Android Studio</span><span class="tag">Ionic Angular</span><span class="tag">Java / XML</span>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="layer-label"><span class="idx">réseaux</span><span class="name">Réseaux &amp; systèmes</span></div>
+        <div class="tags">
+          <span class="tag">Câblage Ethernet RJ45</span><span class="tag">Switches &amp; routeurs</span><span class="tag">VLAN</span>
+          <span class="tag">Maintenance PC</span>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="layer-label"><span class="idx">design</span><span class="name">Design graphique</span></div>
+        <div class="tags">
+          <span class="tag">Illustrator</span><span class="tag">Photoshop</span><span class="tag">Création de logo</span>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="layer-label"><span class="idx">outils</span><span class="name">Outils &amp; méthodes</span></div>
+        <div class="tags">
+          <span class="tag">Git</span><span class="tag">IntelliJ IDEA</span><span class="tag">VS Code</span><span class="tag">Pack Office</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="wrap">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Expérience</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-meta">2024 — 2025</div>
+        <div class="tl-title">Opérateur de traçabilité &amp; conditionnement</div>
+        <div class="tl-org">AGS · Sénégal AgroGreen</div>
+        <ul>
+          <li>Gestion de la base de données : mise à jour et enregistrement des données de production (versements, lots, palettes) dans le système interne.</li>
+          <li>Traçabilité : classement des palettes par catégorie et destination d'export, suivi des mouvements en temps réel.</li>
+          <li>Collaboration avec l'équipe logistique pour garantir l'exactitude des données et le respect des normes.</li>
+          <li>Zebra Technologies : impression d'étiquettes 300 DPI, configuration et dépannage d'imprimantes thermiques.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-meta">2019 — Présent</div>
+        <div class="tl-title">Chargé de communication digitale &amp; coordonnateur</div>
+        <div class="tl-org">ADESSS — Association pour le Développement Environnemental Sanitaire et Social du Sénégal</div>
+        <ul>
+          <li>Création du logo et des supports visuels de l'association.</li>
+          <li>Conception et maintenance du site web : <a href="https://www.ade3s.com/" target="_blank" rel="noopener" style="color:var(--slate); border-bottom:1px dotted var(--slate); text-decoration:none;">ade3s.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Projets</h2>
+    </div>
+    <div class="projects">
+      <div class="project">
+        <span class="p-tag">mémoire de master</span>
+        <h3>Application hybride de gestion</h3>
+        <p>Application mobile hybride développée avec Ionic Angular et TypeScript, interface en HTML/CSS et gestion des données via Firebase.</p>
+      </div>
+      <div class="project">
+        <span class="p-tag">identité visuelle &amp; web</span>
+        <h3>Site &amp; logo ADESSS</h3>
+        <p>Conception du logo, des affiches et du site web de l'association ADESSS.</p>
+        <a class="p-link" href="https://www.ade3s.com/" target="_blank" rel="noopener">ade3s.com</a>
+      </div>
+      <div class="project">
+        <span class="p-tag">portfolio</span>
+        <h3>Portfolio développeur full-stack</h3>
+        <p>Présentation de mon parcours, mes projets et mes compétences en développement web et mobile.</p>
+        <a class="p-link" href="https://sites.google.com/view/mbayefullstack-dev/accueil" target="_blank" rel="noopener">Voir le site</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="formation" class="wrap">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Formation</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-meta">2024 — 2026</div>
+        <div class="tl-title">Master en Informatique — Conception et Développement d'Applications Web, option Full-Stack</div>
+        <div class="tl-org">Université Numérique Cheikh Hamidou Kane (UN-CHK)</div>
+        <ul>
+          <li>Spring Boot : création d'API REST, gestion des dépendances.</li>
+          <li>Bases de données : modélisation, optimisation SQL, administration.</li>
+          <li>Frontend : frameworks React / Angular, CSS, Bootstrap, JavaScript / TypeScript, modularisation.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-meta">2024 — 2025</div>
+        <div class="tl-title">Certification Professionnelle de Spécialisation (CPS) en développement web</div>
+        <div class="tl-org">IMSAS — Institut des Métiers Sciences Appliquées du Sénégal, Saint-Louis</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-meta">2019 — 2023</div>
+        <div class="tl-title">Licence en Informatique — Développement des Applications Web et Mobile</div>
+        <div class="tl-org">Université Numérique Cheikh Hamidou Kane (UN-CHK)</div>
+        <ul>
+          <li>Application web : HTML5, CSS, JavaScript, PHP, algorithmique, C, SQL, Java, frameworks Bootstrap / Laravel / Angular / JSF.</li>
+          <li>Application mobile : Android Studio (Java, XML, SQLite).</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-meta">Mars 2022 — Jan. 2023</div>
+        <div class="tl-title">Networking Essentials (Cisco)</div>
+        <div class="tl-org">Programme Force-N &amp; boost-camp, CNEPS Thiès</div>
+        <ul>
+          <li>Câblage Ethernet RJ45, configuration de switches et routeurs, implémentation de VLAN.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-meta">2019</div>
+        <div class="tl-title">Baccalauréat, série L</div>
+        <div class="tl-org">Lycée Ngallèle</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="section-head">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Langues &amp; centres d'intérêt</h2>
+    </div>
+    <div class="split3">
+      <div>
+        <h3>langues</h3>
+        <div class="lang-row"><span>Français</span><div class="lang-bar"><span style="width:100%"></span></div></div>
+        <div class="lang-row"><span>Anglais</span><div class="lang-bar"><span style="width:70%"></span></div></div>
+        <div class="lang-row"><span>Wolof</span><div class="lang-bar"><span style="width:100%"></span></div></div>
+      </div>
+      <div>
+        <h3>certifications</h3>
+        <ul class="cert-list">
+          <li>Networking Essentials — Cisco</li>
+          <li>Certification Professionnelle de Spécialisation — IMSAS</li>
+          <li>Permis de conduire A1, B</li>
+        </ul>
+      </div>
+      <div>
+        <h3>centres d'intérêt</h3>
+        <ul class="interest-list">
+          <li>Lecture</li><li>Musique</li><li>Actualités</li><li>Jeux vidéo</li><li>Sport</li><li>Course à pied</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="wrap">
+  <div class="contact-panel">
+    <div>
+      <h2>Discutons de votre projet</h2>
+      <p>Disponible pour des missions en développement web et mobile, à Saint-Louis ou à distance.</p>
+    </div>
+    <div class="contact-list">
+      <div><span class="k">email</span><a href="mailto:mbayendiaye2202@gmail.com">mbayendiaye2202@gmail.com</a></div>
+      <div><span class="k">tel</span><a href="tel:+221777522114">+221 77 752 21 14</a></div>
+      <div><span class="k">linkedin</span><a href="https://www.linkedin.com/in/mbaye-ndiaye-0a491b269" target="_blank" rel="noopener">mbaye-ndiaye-0a491b269</a></div>
+      <div><span class="k">portfolio</span><a href="https://sites.google.com/view/mbayefullstack-dev/accueil" target="_blank" rel="noopener">sites.google.com/view/mbayefullstack-dev</a></div>
+    </div>
+  </div>
+  <p class="foot-note">Saint-Louis, Sénégal</p>
+</footer>
+
+</body>
+</html>
