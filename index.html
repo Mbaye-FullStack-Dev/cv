@@ -423,6 +423,8 @@
   }
   .project h3{font-size:1rem;}
   .project p{color:var(--text-dim); font-size:13.5px; margin:0;}
+  .project-techs{display:flex; flex-wrap:wrap; gap:6px; margin-top:2px;}
+  .project-techs span{color:var(--teal); font:500 11px 'JetBrains Mono',monospace;}
   .project a.p-link{
     margin-top:auto; font-size:13px; text-decoration:none;
     color:var(--teal); align-self:flex-start;
@@ -594,6 +596,7 @@
           <a class="btn btn-primary" href="cv.pdf" target="_blank" rel="noopener">Télécharger le CV</a>
           <a class="btn btn-ghost" href="#projects">Voir mes projets</a>
           <a class="btn btn-ghost" href="#contact">Me contacter</a>
+          <a class="btn btn-ghost" href="https://github.com/Mbaye-FullStack-Dev" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
       <div class="portrait-frame">
@@ -822,9 +825,9 @@
         </ul>
       </div>
     </div>
-  </section>
+  </section> 
 
-  <!-- <section id="projects" class="wrap">
+  <section id="projects" class="wrap">
     <div class="section-head" data-reveal>
       <span class="section-num">04</span>
       <h2 class="section-title">Projets</h2>
@@ -832,23 +835,15 @@
     </div>
     <div class="projects" data-reveal>
       <div class="project">
-        <span class="p-tag">stage de master</span>
-        <h3>Bibliothèque numérique Daaray Kaamil</h3>
-        <p>Plateforme de gestion, consultation et archivage d'œuvres numérisées, avec moteur de recherche multicritère et support des manuscrits en arabe.</p>
-      </div>
-      <div class="project">
-        <span class="p-tag">mémoire de licence</span>
-        <h3>Application mobile hybride de gestion</h3>
-        <p>Application développée avec Ionic Angular et TypeScript, interface HTML/CSS et persistance des données via Firebase.</p>
-      </div>
-      <div class="project">
-        <span class="p-tag">identité visuelle &amp; web</span>
-        <h3>Logo &amp; site ADESSS</h3>
-        <p>Création du logo, des affiches et du site web de l'association ADESSS Sanar.</p>
-        <a class="p-link" href="https://www.ade3ss.com/" target="_blank" rel="noopener">ade3ss.com</a>
+        <span class="p-tag">profil développeur</span>
+        <h3>Mbaye Full-Stack Dev</h3>
+        <p>Retrouvez mon profil GitHub, mes projets, mes expérimentations et mon évolution dans le développement logiciel.</p>
+        <div class="project-techs"><span>Web</span><span>Mobile</span><span>API</span><span>DevOps</span></div>
+        <a class="p-link" href="https://github.com/Mbaye-FullStack-Dev" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> Voir mon GitHub</a>
       </div>
     </div>
-  </section> -->
+
+  </section> 
 
   <section id="formation" class="wrap">
     <div class="section-head" data-reveal>
@@ -939,6 +934,7 @@
     <div class="contact-list">
       <div><span class="k">email</span><a href="mailto:mbayendiaye2202@gmail.com">mbayendiaye2202@gmail.com</a></div>
       <div><span class="k">tel</span><a href="tel:+221777522114">+221 77 752 21 14</a></div>
+      <div><span class="k">github</span><a href="https://github.com/Mbaye-FullStack-Dev" target="_blank" rel="noopener">Mbaye-FullStack-Dev</a></div>
     </div>
     <form class="contact-form" id="contact-form" action="https://formspree.io/f/mjykwqpn" method="POST">
       <label for="contact-name">Nom<input id="contact-name" name="name" type="text" autocomplete="name" required></label>
