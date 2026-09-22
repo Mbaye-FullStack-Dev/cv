@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#070d18"/>
+  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="#1f2f4a" stroke-width="2"/>
+  <text x="32" y="34" font-family="ui-monospace, 'Courier New', monospace" font-size="20" font-weight="700" fill="#38bdf8" text-anchor="middle">mb</text>
+  <path d="M20 38 H44" stroke="#2dd4bf" stroke-width="5" stroke-linecap="round"/>
+  <path d="M20 46 h14" stroke="#818cf8" stroke-width="5" stroke-linecap="round"/>
+</svg>
